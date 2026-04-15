@@ -304,15 +304,15 @@ $.Viewer = function( options ) {
 
     this.element              = this.element || document.getElementById( this.id );
     this.canvas               = $.makeNeutralElement( "div" );
-    this.canvas.className = "openseadragon-canvas";
+    this.canvas.className = "zoomable-canvas";
 
     // Injecting mobile-only CSS to remove focus outline
-    if (!document.querySelector('style[data-openseadragon-mobile-css]')) {
+    if (!document.querySelector('style[data-zoomable-mobile-css]')) {
         const style = document.createElement('style');
-        style.setAttribute('data-openseadragon-mobile-css', 'true');
+        style.setAttribute('data-zoomable-mobile-css', 'true');
         style.textContent =
             '@media (hover: none) {' +
-            '    .openseadragon-canvas:focus {' +
+            '    .zoomable-canvas:focus {' +
             '        outline: none !important;' +
             '    }' +
             '}';
@@ -333,7 +333,7 @@ $.Viewer = function( options ) {
     }
 
     //the container is created through applying the ControlDock constructor above
-    this.container.className = "openseadragon-container";
+    this.container.className = "zoomable-container";
     (function( style ){
         style.width     = "100%";
         style.height    = "100%";
