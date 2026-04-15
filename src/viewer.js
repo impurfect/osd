@@ -2829,7 +2829,7 @@ $.extend( $.Viewer.prototype, $.EventSource.prototype, $.ControlDock.prototype, 
 
         this.messageDiv = $.makeCenteredNode( div );
 
-        $.addClass(this.messageDiv, "openseadragon-message");
+        $.addClass(this.messageDiv, "zoomable-message");
 
         this.container.appendChild( this.messageDiv );
     },
@@ -3085,7 +3085,7 @@ function getOverlayObject( viewer, overlay ) {
     } else {
         const id = overlay.id ?
             overlay.id :
-            "openseadragon-overlay-" + Math.floor( Math.random() * 10000000 );
+            "zoomable-overlay-" + Math.floor( Math.random() * 10000000 );
 
         element = $.getElement( overlay.id );
         if ( !element ) {
@@ -3095,7 +3095,7 @@ function getOverlayObject( viewer, overlay ) {
         element.id = id;
         $.addClass( element, overlay.className ?
             overlay.className :
-            "openseadragon-overlay"
+            "zoomable-overlay"
         );
     }
 
